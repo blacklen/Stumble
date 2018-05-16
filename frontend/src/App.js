@@ -21,7 +21,7 @@ class App extends Component {
             <div className = "title">
               <img className="logo" src="" />
               <button type="submit" onclick="_onChange">New</button>
-              <audio controls autoplay ><source src={this.state.musicUrl} type="audio/mpeg"/></audio>
+              <audio controls autoPlay ><source src={this.state.musicUrl} type="audio/mpeg"/></audio>
 
             </div>
             <div style={{backgroundImage: `url(${this.state.imageUrl})`}} className="content">
