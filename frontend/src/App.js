@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { bgImage, random} from "./images";
 
 class App extends Component {
+  state = {
+    imageUrl : bgImage,
+    musicUrl : "http://data3.chiasenhac.com/downloads/1770/3/1769847-b984856c/128/Perfect%20-%20Ed%20Sheeran%20%5B128kbps_MP3%5D.mp3",
+    book : ""
+  }
+  _onChange = ()=>{
+    this.setState({imageUrl: random()})
+  }
   render() {
+    
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div style={{backgroundImage: `url(${this.state.imageUrl})`}}  className="Background"></div>
+          <div className="main">
+            <div className = "title">
+              <img className="logo" src="" />
+              <button type="submit" onclick="_onChange">New</button>
+              <audio controls autoplay ><source src={this.state.musicUrl} type="audio/mpeg"/></audio>
+
+            </div>
+            <div style={{backgroundImage: `url(${this.state.imageUrl})`}} className="content">
+    
+            </div>
+          </div>
       </div>
     );
   }
