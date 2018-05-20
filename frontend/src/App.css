@@ -3,12 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  src: url('https://fonts.googleapis.com/css?family=Pacifico'); /* IE9 Compat Modes */
-}
 .App{
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
@@ -60,8 +54,8 @@
 }
 
 .footer{
-  position: relative;
-  bottom: 0%;
+  position: absolute;
+  top: 60%;
 }
 
 .book{
@@ -82,7 +76,7 @@
 }
 .change:hover{
   background: rgba(241, 138, 3, 0.87);
-  box-shadow: 0 0 3px #5359b1ea
+  box-shadow: 0 0 6px #5359b1ea
 }
 .change:active{
   box-shadow: 0 0 0 transparent;
