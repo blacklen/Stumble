@@ -51,11 +51,13 @@ class App extends Component {
           <div className="main">
             <div className = "title">
               <div className="logo">Stumble</div>
-              <i className="nameBook"> {this.state.nameBook} </i>
-              {this.renderAudio()}
+              <p className="nameBook"> {this.state.nameBook} </p>
+              
               <button type="submit" className="change" onClick={this._onChange}>New</button>
+              {this.renderAudio()}
             </div>
-            <div style={{backgroundImage: `url(${this.state.imageUrl})`}} className="content">
+            <div style={{backgroundImage: `url(${this.state.imageUrl})`}} className="Background2"></div> 
+            <div className="content">
               <p className="intro" dangerouslySetInnerHTML={{ __html: this.state.contentBook }}></p>
               <div className="footer">
                 <h1 className="quote"> {this.state.quote} </h1>
