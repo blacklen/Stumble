@@ -55,7 +55,7 @@ class App extends Component {
         <div style={{backgroundImage: `url(${this.state.imageUrl})`}}  className="Background"></div>
           <div className="main">
             <div className = "title">
-              <div className="logo">Stumble</div>
+              <div className="logo">Stumbling</div>
               <p className="nameBook"> {this.state.nameBook} </p>
               
               <button type="submit" className="change" onClick={this._onChange}>New</button>
@@ -67,7 +67,7 @@ class App extends Component {
               <div className="footer">
                 <h1 className="quote"> {this.state.quote} </h1>
                 <h2 className="book"> -Trích {this.state.nameBook} - </h2>
-                <iframe className="like" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fstumble.herokuapp.com&width=450&layout=standard&action=like&size=small&show_faces=true&share=false&height=80&appId" width="450" height="80" style={{border: "none",overFlow: "hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                <iframe className="like" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fstumbling.herokuapp.com&width=450&layout=standard&action=like&size=small&show_faces=true&share=false&height=80&appId" width="450" height="80" style={{border: "none",overFlow: "hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
           </div>
