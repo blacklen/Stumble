@@ -8,7 +8,9 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.Background {
+
+.Background{
+  
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -16,6 +18,18 @@
   filter: blur(4px);
   position: absolute;
 }
+
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 
 
 .main{
@@ -105,7 +119,7 @@
 .logo{
   border: 1px black solid;
   border-radius: 7px;
-  width: 100px;
+  width: 30%;
   font-size: 40px;
   /* transform: rotate(-30deg); */
   font-family: 'Tangerine', cursive;

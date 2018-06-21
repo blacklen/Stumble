@@ -11,12 +11,22 @@ class App extends Component {
     nameBook : "",
     contentBook: "",
     quote:"",
-    check : []
+    idMusic: 0,
+    animation: "",
+    count: 0,
+
   }
 
   componentDidMount(){
+    var d = new Date();
+    var date = parseInt(d.getDate(),10) - 20;
+    if(date < 0){
+      if(d.getDate() >= 10) date = parseInt(d.getDate(),10) - 10;
+      else date = d.getDate();
+    }
+    this.setState({idMusic: date});
     this.setState({imageUrl: random()});
-    this.setState({musicUrl: musicRandom()});
+    this.setState({musicUrl: musicRandom(date)});
     let bookData = bookRandom();
     this.setState({nameBook: bookData.name});
     this.setState({contentBook: bookData.content});
@@ -26,18 +36,27 @@ class App extends Component {
       check[i]=0;
     }
     this.setState({check});
+    this.renderAudio();
+    this.setState({animation: "fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards"})
   }
   
 
   _onChange = ()=>{
     this.setState({imageUrl: random()});
-    this.setState({musicUrl: musicRandom()});
+    this.setState({musicUrl: musicRandom(this.state.idMusic)});
     console.log(this.state.musicUrl);
     let bookData = bookRandom(this.state.check);
-    console.log(bookData.quote);
     this.setState({nameBook: bookData.name});
     this.setState({contentBook: bookData.content});
-    this.setState({quote: bookData.quote})
+    this.setState({quote: bookData.quote});
+    let count = this.state.count;
+    if(count%2===1){
+      this.setState({animation: "fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards"})
+    }
+    else{
+      this.setState({animation: ""})
+    }
+    this.setState({count: count+1});
   }
 
   renderAudio() {
@@ -49,10 +68,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.musicUrl)
     return (
       <div className="App">
-        <div style={{backgroundImage: `url(${this.state.imageUrl})`}}  className="Background"></div>
+        <div style={{backgroundImage: `url(${this.state.imageUrl})`,animation: this.state.animation}}  className="Background"></div>
           <div className="main">
             <div className = "title">
               <div className="logo">Stumbling</div>
